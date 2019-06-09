@@ -157,7 +157,7 @@ extends JFrame {
     private void jbRedeActionPerformed(ActionEvent evt) {
    //     Desktop desk = Desktop.getDesktop();
         try {
- //           desk.browse(new URI("http://www.blsoft.com.br/loja/index.php?route=product/product&path=20_27&product_id=76"));
+ //           
         }
         catch (Exception e) {
             e.printStackTrace();
