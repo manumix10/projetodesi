@@ -1,6 +1,6 @@
 package view;
 
-import blserial.ViewAtivarSoftware;
+
 import componentes.UJPanelImagem;
 import controller.ControllerAberturaCaixaPDV;
 import controller.ControllerCliente;
@@ -1189,9 +1189,6 @@ extends JFrame {
         t.start();
     }
 
-    private void jmiAtivacaoActionPerformed(ActionEvent evt) {
-        new ViewAtivarSoftware().setVisible(true);
-    }
 
     private void btVideoAulaActionPerformed(ActionEvent evt) {
         new ViewDevolucao().setVisible(true);
