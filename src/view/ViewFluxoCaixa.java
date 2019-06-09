@@ -24,8 +24,8 @@ import model.ModelFormaPagamento;
 import model.ModelFornecedor;
 import model.ModelVendas;
 import model.ModelVendas2;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 
 /**
  *
@@ -49,7 +49,7 @@ public class ViewFluxoCaixa extends javax.swing.JFrame {
     ControllerVendas2 controllerVendas2 = new ControllerVendas2();
     ArrayList<ModelVendas> listaModelVendas = new ArrayList<>();
     ArrayList<ModelVendas2> listaModelVendas2 = new ArrayList<>();
-    BLMascaras bLMascaras = new BLMascaras();
+    Mascaras bLMascaras = new Mascaras();
     
     /**
      * Creates new form ViewFluxoCaixa
@@ -397,7 +397,7 @@ public class ViewFluxoCaixa extends javax.swing.JFrame {
   }
     
      private void carregarContas() {
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
 //        Date dataInicial = null, dataFinal = null;
         ModelVendas modelVendas = new ModelVendas();
         ModelVendas2 modelVendas2 = new ModelVendas2();
@@ -513,7 +513,7 @@ public class ViewFluxoCaixa extends javax.swing.JFrame {
     }
  
       public final void consultaContasPag(java.util.Date dataInicial, java.util.Date dataFinal)
-  {     BLDatas bl = new BLDatas();
+  {     Datas bl = new Datas();
  //       Date dataInicial = null, dataFinal = null;
         ModelVendas modelVendas = new ModelVendas();
         DefaultTableModel modelo = (DefaultTableModel) tbFluxoCaixa.getModel();

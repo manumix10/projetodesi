@@ -38,11 +38,11 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import model.ModelProdutos;
-import util.BLMascaras;
+import util.Mascaras;
 
 public class ViewEstoquePDV
 extends JFrame {
-    BLMascaras bLMascaras = new BLMascaras();
+    Mascaras bLMascaras = new Mascaras();
     private JButton jButton1;
     private JLabel jLabel1;
     private JLabel jLabel2;

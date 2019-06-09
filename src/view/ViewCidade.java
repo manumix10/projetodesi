@@ -39,7 +39,7 @@ import javax.swing.table.TableModel;
 import model.ModelCidade;
 import model.ModelCidadeEstado;
 import model.ModelEstado;
-import util.BLTiraAcentos;
+import util.TiraAcentos;
 
 public class ViewCidade
 extends JFrame {
@@ -222,7 +222,7 @@ extends JFrame {
 
     private void tfCidadeFocusLost(FocusEvent evt) {
         this.tfCidade.setText(this.tfCidade.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfCidade.setText(blTiraAcentos.TiraAcentos(this.tfCidade.getText()));
     }
 

@@ -81,8 +81,8 @@ import model.ModelVendasProdutos;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 import util.AtualizadorHorario;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 import util.ImprimePDV;
 
 public class ViewPdv
@@ -458,7 +458,7 @@ extends JFrame {
     private void jtfCodigoProdutoKeyPressed(KeyEvent evt) {
         this.keyPressed(evt);
         this.statusCaixa();        
-        this.jtfValorPagar.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal()));
+        this.jtfValorPagar.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal()));
     }
 
     private void jtfCodigoProdutoActionPerformed(ActionEvent evt) {
@@ -581,7 +581,7 @@ extends JFrame {
             ControllerProdutos controllerProdutos = new ControllerProdutos();
             ModelProdutos modelProdutos = new ModelProdutos();
             DefaultTableModel modelo = (DefaultTableModel)this.tbProdutos.getModel();
-            BLMascaras bLMascaras = new BLMascaras();
+            Mascaras bLMascaras = new Mascaras();
             try {
                 modelProdutos = this.jrbCodigoBarras.isSelected() ? controllerProdutos.getProdutosCodigoBarrasController(this.jtfCodigoProduto.getText()) : controllerProdutos.getProdutosController(Integer.parseInt(this.jtfCodigoProduto.getText()));
                 float valorArredondado = (float)(this.quantidadeProduto * (double)modelProdutos.getValor());
@@ -608,7 +608,7 @@ extends JFrame {
         ModelProdutos modelProdutos = new ModelProdutos();
         DefaultTableModel modelo = (DefaultTableModel)this.tbProdutos.getModel();
         modelProdutos = controllerProdutos.getProdutosController(pCodigoProduto);
-        BLMascaras bLMascaras = new BLMascaras();
+        Mascaras bLMascaras = new Mascaras();
         float valorArredondado = (float)(modelProdutos.getValor() * (float)this.quantidadeProduto);
         float valorArredondadoFinal = bLMascaras.arredondamentoComPontoDuasCasas(valorArredondado);
         modelo.addRow(new Object[]{
@@ -711,7 +711,7 @@ extends JFrame {
         this.listaProdutoses = new ArrayList();
         this.modelAberturaCaixaPDV = new ModelAberturaCaixaPDV();
         float quantidade = 0.0f;
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         for (i = 0; i < this.tbProdutos.getRowCount(); ++i) {
             this.modelVendas = new ModelVendas();
             this.modelProdutos = new ModelProdutos();
@@ -752,7 +752,7 @@ extends JFrame {
             this.controllerVendas.salvarVendasProdutosController(this.modelVendas);
             Double valorAtual = this.controllerAberturaCaixaPDV.getDadosCaixaAtualPeloUsuarioController(ModelSessaoUsuario.codigo).getValorFechamento();
             Double valorRecebido = Double.parseDouble("" + this.viewPagamentoPDV.getValorTotal());
-            this.modelAberturaCaixaPDV.setValorFechamento(new BLMascaras().arredondamentoComPontoDuasCasasDouble(valorAtual + valorRecebido));
+            this.modelAberturaCaixaPDV.setValorFechamento(new Mascaras().arredondamentoComPontoDuasCasasDouble(valorAtual + valorRecebido));
             this.modelAberturaCaixaPDV.setCodigoUsuario(ModelSessaoUsuario.codigo);
             this.controllerAberturaCaixaPDV.atualizarValorFechamentoCaixaController(this.modelAberturaCaixaPDV);
             JOptionPane.showMessageDialog(this, "Registro gravado com sucesso!");
@@ -778,7 +778,7 @@ extends JFrame {
         ControllerVendas controllerVendas = new ControllerVendas();
         ArrayList listaModelVendasProdutoses = new ArrayList();
         ModelVendas modelVendas = new ModelVendas();
-        BLMascaras bLMascaras = new BLMascaras();
+        Mascaras bLMascaras = new Mascaras();
         modelVendas = controllerVendas.getVendasController(79);
         listaModelVendasProdutoses = controllerVendasProdutos.getListaVendasProdutosController(79);
         System.out.println("Entrei aqui 2");

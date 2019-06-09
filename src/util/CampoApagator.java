@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-public class BLCampoApagator {
+public class CampoApagator {
     public void limparCampos(Container container) {
         Component[] campos;
         for (Component componente : campos = container.getComponents()) {

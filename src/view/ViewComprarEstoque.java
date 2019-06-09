@@ -49,8 +49,8 @@ import model.ModelContaPagar;
 import model.ModelFornecedor;
 import model.ModelProdutos;
 import util.AguardeGerandoRelatorio;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 import view.ViewVenda;
 
 public class ViewComprarEstoque
@@ -66,8 +66,8 @@ extends JFrame {
     ArrayList<ModelFornecedor> listaModelFornecedors = new ArrayList();
     ControllerContaPagar controllerContaPagar = new ControllerContaPagar();
     ModelContaPagar modelContaPagar = new ModelContaPagar();
-    BLMascaras blmascaras = new BLMascaras();
-    BLDatas bLDatas = new BLDatas();
+    Mascaras blmascaras = new Mascaras();
+    Datas bLDatas = new Datas();
     private JButton btExcluir;
     private JButton btSalvar;
     private UJComboBox cbCodBarrasProdutos;

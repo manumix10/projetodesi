@@ -50,7 +50,7 @@ import model.ModelCidade;
 import model.ModelEmpresa;
 import model.ModelEmpresaCidadeEstado;
 import model.ModelEstado;
-import util.BLTiraAcentos;
+import util.TiraAcentos;
 import view.ViewCidade;
 
 public class ViewEmpresa
@@ -419,7 +419,7 @@ extends JFrame {
 
     private void tfNomeFantasiaFocusLost(FocusEvent evt) {
         this.tfNomeFantasia.setText(this.tfNomeFantasia.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfNomeFantasia.setText(blTiraAcentos.TiraAcentos(this.tfNomeFantasia.getText()));
     }
 
@@ -457,19 +457,19 @@ extends JFrame {
 
     private void tfRazaoSocialFocusLost(FocusEvent evt) {
         this.tfRazaoSocial.setText(this.tfRazaoSocial.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfRazaoSocial.setText(blTiraAcentos.TiraAcentos(this.tfRazaoSocial.getText()));
     }
 
     private void tfEnderecoFocusLost(FocusEvent evt) {
         this.tfEndereco.setText(this.tfEndereco.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfEndereco.setText(blTiraAcentos.TiraAcentos(this.tfEndereco.getText()));
     }
 
     private void tfBairroFocusLost(FocusEvent evt) {
         this.tfBairro.setText(this.tfBairro.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfBairro.setText(blTiraAcentos.TiraAcentos(this.tfBairro.getText()));
     }
 

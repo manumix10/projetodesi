@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 import model.ModelFormaPagamento;
-import util.BLMascaras;
+import util.Mascaras;
 
 /**
  *
@@ -248,24 +248,24 @@ public class ViewPagamentoPDV extends javax.swing.JDialog {
 
     private void jtfValorRecebidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfValorRecebidoFocusLost
         // TODO add your handling code here:
-        this.jlfValorPagar.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.calcularDesconto()));
-        this.jtfTroco.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.calcularTroco()));
+        this.jlfValorPagar.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.calcularDesconto()));
+        this.jtfTroco.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.calcularTroco()));
     }//GEN-LAST:event_jtfValorRecebidoFocusLost
 
     private void jtfValorRecebidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorRecebidoKeyReleased
         // TODO add your handling code here:
-        this.jtfValorRecebido.setText(new BLMascaras().converterVirgulaParaPonto(this.jtfValorRecebido.getText()));
+        this.jtfValorRecebido.setText(new Mascaras().converterVirgulaParaPonto(this.jtfValorRecebido.getText()));
     }//GEN-LAST:event_jtfValorRecebidoKeyReleased
 
     private void jtfDescontoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfDescontoFocusLost
         // TODO add your handling code here:
-        this.jlfValorPagar.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.calcularDesconto()));
-        this.jtfTroco.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.calcularTroco()));
+        this.jlfValorPagar.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.calcularDesconto()));
+        this.jtfTroco.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.calcularTroco()));
     }//GEN-LAST:event_jtfDescontoFocusLost
 
     private void jtfDescontoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDescontoKeyReleased
         // TODO add your handling code here:
-        this.jtfDesconto.setText(new BLMascaras().converterVirgulaParaPonto(this.jtfDesconto.getText()));
+        this.jtfDesconto.setText(new Mascaras().converterVirgulaParaPonto(this.jtfDesconto.getText()));
     }//GEN-LAST:event_jtfDescontoKeyReleased
     
      private void limparTabela() {
@@ -394,15 +394,15 @@ public class ViewPagamentoPDV extends javax.swing.JDialog {
     }
     
    public void setTextFildValorTotal(){
-       this.jtfSubtotal.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.valorTotal));
+       this.jtfSubtotal.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.valorTotal));
    }
    
    public void setTextFildValorRecebido(){
-       this.jtfValorRecebido.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.valorRecebido));
+       this.jtfValorRecebido.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.valorRecebido));
    }
    
    public void setTextFildValorDesconto(){
-       this.jtfDesconto.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.desconto));
+       this.jtfDesconto.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.desconto));
    }
 
     /**

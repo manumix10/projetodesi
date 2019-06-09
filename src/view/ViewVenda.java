@@ -30,8 +30,8 @@ import model.ModelVendas;
 import model.ModelOrdemServico;
 import model.ModelVendas2;
 import util.AguardeGerandoRelatorio;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 
 /**
  * @author BLSoft www.Blsoft.com.br Venda de software e código fonte
@@ -60,9 +60,9 @@ public class ViewVenda extends javax.swing.JFrame {
     ControllerFormaPagamento controllerTipoPagamento = new ControllerFormaPagamento();
     ArrayList<ModelFormaPagamento> listaModelTipoPagamentos = new ArrayList<>();
     ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
-    BLMascaras bLMascaras = new BLMascaras();
+    Mascaras bLMascaras = new Mascaras();
     float valorCartao, valorCheque, valorDinheiro, valorVale;
-    BLDatas blDatas = new BLDatas();
+    Datas blDatas = new Datas();
     private SimpleDateFormat horaFormatada = new SimpleDateFormat("HH:mm:ss");
     String tipoCadastro, garantia;
 
@@ -907,13 +907,13 @@ public class ViewVenda extends javax.swing.JFrame {
         tfDesconto.setEnabled(false);
         tfObservacao.setEnabled(false);
         tfValorUnitario.setEditable(false);
-        jdDataSaida.setEnabled(false);
-        jdDataGarantia.setEnabled(false);
+        //jdDataSaida.setEnabled(false);
+        //jdDataGarantia.setEnabled(false);
     }
 
     protected void desabilitarCampos2() {
-        jdDataSaida.setEnabled(false);
-        jdDataGarantia.setEnabled(false);
+        //jdDataSaida.setEnabled(false);
+        //jdDataGarantia.setEnabled(false);
   //      limpaTelaNovoProduto2();
     }
 
@@ -944,7 +944,7 @@ public class ViewVenda extends javax.swing.JFrame {
             //        listaModelOrdemServico = new ArrayList<>();
             int codigoProduto;
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();
@@ -960,8 +960,8 @@ public class ViewVenda extends javax.swing.JFrame {
 
                 try {
                     modelVendas.setDataVenda(bl.converterDataParaDateUS(new java.util.Date(System.currentTimeMillis())));
-                    modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
-                    modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
+                    //modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
+                    //modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
                 } catch (Exception ex) {
                     Logger.getLogger(ViewOrcamento.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1015,7 +1015,7 @@ public class ViewVenda extends javax.swing.JFrame {
             listaModelProdutos = new ArrayList<>();
             int codigoProduto;
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();
@@ -1028,8 +1028,8 @@ public class ViewVenda extends javax.swing.JFrame {
                 modelVendas.setGarantia(this.garantia);
                 try {
                     modelVendas.setDataVenda(bl.converterDataParaDateUS(new java.util.Date(System.currentTimeMillis())));
-                    modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
-                    modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
+                    //modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
+                    //modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
                 } catch (Exception ex) {
                     Logger.getLogger(ViewOrcamento.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1081,7 +1081,7 @@ public class ViewVenda extends javax.swing.JFrame {
             listaModelProdutos = new ArrayList<>();
             int codigoProduto;
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas2 = new ModelVendas2();
@@ -1094,8 +1094,8 @@ public class ViewVenda extends javax.swing.JFrame {
                 modelVendas2.setGarantia(this.garantia);
                 try {
                     modelVendas2.setDataVenda(bl.converterDataParaDateUS(new java.util.Date(System.currentTimeMillis())));
-                    modelVendas2.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
-                    modelVendas2.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
+                    //modelVendas2.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
+                    //modelVendas2.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
                 } catch (Exception ex) {
                     Logger.getLogger(ViewOrcamento.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1147,7 +1147,7 @@ public class ViewVenda extends javax.swing.JFrame {
             listaModelProdutos = new ArrayList<>();
             int codigoProduto;
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();
                 modelProdutos = new ModelProdutos();
@@ -1159,8 +1159,8 @@ public class ViewVenda extends javax.swing.JFrame {
 
                 try {
                     modelVendas.setDataVenda(bl.converterDataParaDateUS(new java.util.Date(System.currentTimeMillis())));
-                    modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
-                    modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
+                   // modelVendas.setDataSaida(bl.converterDataParaDateUS(jdDataSaida.getDate()));
+                    //modelVendas.setDataGarantia(bl.converterDataParaDateUS(jdDataGarantia.getDate()));
                 } catch (Exception ex) {
                     Logger.getLogger(ViewVenda.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1272,8 +1272,8 @@ public class ViewVenda extends javax.swing.JFrame {
         // TODO add your handling code here:
         tipoCadastro = "Novo";
         this.limpaTelaNovoProduto();
-        this.jdDataSaida.setDate(new Date(System.currentTimeMillis()));
-        this.jdDataGarantia.setDate(new Date(System.currentTimeMillis()));
+        //this.jdDataSaida.setDate(new Date(System.currentTimeMillis()));
+        //this.jdDataGarantia.setDate(new Date(System.currentTimeMillis()));
         jtfHorario.setText(blDatas.retornarHorario());
         ViewVenda.this.jtfHorario.setText(ViewVenda.this.horaFormatada.format(new Date()));
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -1332,7 +1332,7 @@ public class ViewVenda extends javax.swing.JFrame {
 
     private void tfDescontoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDescontoKeyReleased
         // TODO add your handling code here:
-        this.tfDesconto.setText(new BLMascaras().converterVirgulaParaPonto(this.tfDesconto.getText()));
+        this.tfDesconto.setText(new Mascaras().converterVirgulaParaPonto(this.tfDesconto.getText()));
     }//GEN-LAST:event_tfDescontoKeyReleased
 
     private void tfDescontoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfDescontoFocusGained
@@ -1512,7 +1512,7 @@ public class ViewVenda extends javax.swing.JFrame {
 
     private void tfValorUnitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfValorUnitarioKeyReleased
         // TODO add your handling code here:
-        this.tfValorUnitario.setText(new BLMascaras().converterVirgulaParaPonto(this.tfValorUnitario.getText()));
+        this.tfValorUnitario.setText(new Mascaras().converterVirgulaParaPonto(this.tfValorUnitario.getText()));
     }//GEN-LAST:event_tfValorUnitarioKeyReleased
 
     private void SIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIMActionPerformed
@@ -1560,8 +1560,8 @@ public class ViewVenda extends javax.swing.JFrame {
             this.SIM.requestFocus();
             this.NAO.requestFocus();
             this.tfObservacao.setText(modelVendas.getObservacao());     
-            this.jdDataSaida.setDate(modelVendas.getDataSaida());
-            this.jdDataGarantia.setDate(modelVendas.getDataGarantia());
+            //this.jdDataSaida.setDate(modelVendas.getDataSaida());
+            //this.jdDataGarantia.setDate(modelVendas.getDataGarantia());
             //recupera os dados do banco
             listaModelVendasAlterar = controllerVendas.getListaVendasController(pCodigo);
             //carregar lista de produtos da venda
@@ -1666,15 +1666,15 @@ public class ViewVenda extends javax.swing.JFrame {
         modelo.setNumRows(0);
         this.tfDesconto.setText("0");
         this.tfObservacao.setText("");
-        this.jdDataGarantia.setDate(null);
-        this.jdDataSaida.setDate(null);
+        //this.jdDataGarantia.setDate(null);
+        //this.jdDataSaida.setDate(null);
  //       this.garantia.equals(garantia);
 
         habilitarCampos();
     }
     private void limpaTelaNovoProduto2() {
-        this.jdDataGarantia.setDate(null);
-        this.jdDataSaida.setDate(null);
+        //this.jdDataGarantia.setDate(null);
+        //this.jdDataSaida.setDate(null);
     }
 
     private void habilitarCampos() {
@@ -1686,12 +1686,12 @@ public class ViewVenda extends javax.swing.JFrame {
         tfDesconto.setEnabled(true);
         tfObservacao.setEnabled(true);
         tfValorUnitario.setEditable(true);
-        this.jdDataSaida.setEnabled(true);
-        this.jdDataGarantia.setEnabled(true);
+        //this.jdDataSaida.setEnabled(true);
+        //this.jdDataGarantia.setEnabled(true);
     }
     private void habilitarCampos2() {
-        this.jdDataSaida.setEnabled(true);
-        this.jdDataGarantia.setEnabled(true);
+        //this.jdDataSaida.setEnabled(true);
+        //this.jdDataGarantia.setEnabled(true);
     }
     private void incluirProduto() {
        // TODO add your handling code here:

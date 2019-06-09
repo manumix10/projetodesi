@@ -46,9 +46,9 @@ import model.ModelParcelaContaRec;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 import util.AguardeImagensProjetos;
-import util.BLCampoApagator;
-import util.BLData;
-import util.BLValida;
+import util.CampoApagator;
+import util.Data;
+import util.Valida;
 
 public class ViewCaixa
 extends JFrame {
@@ -77,7 +77,7 @@ extends JFrame {
 
     public ViewCaixa() {
         this.initComponents();
-        BLValida.validarUsuarioSistema();
+        Valida.validarUsuarioSistema();
         this.setLocationRelativeTo(null);
         final AguardeImagensProjetos carregando = new AguardeImagensProjetos();
         carregando.setVisible(true);
@@ -229,7 +229,7 @@ extends JFrame {
     }
 
     public void limparCampos(JPanel painel) {
-        BLCampoApagator blCamposApagator = new BLCampoApagator();
+        CampoApagator blCamposApagator = new CampoApagator();
         blCamposApagator.limparCampos(painel);
         DefaultTableModel modelo = (DefaultTableModel)this.jtFluxoCaixa.getModel();
         modelo.setNumRows(0);
@@ -247,7 +247,7 @@ extends JFrame {
         ArrayList listaModelClienteContaParcelaPag = new ArrayList();
         ModelParcelaContaRec modelParcelaContaRec = new ModelParcelaContaRec();
         ModelParcelaContaPag modelParcelaContaPag = new ModelParcelaContaPag();
-        BLData bldata = new BLData();
+        Data bldata = new Data();
         float valorReceberFinal = 0.0f;
         float valorTotalReceberfinal = 0.0f;
         float valorTotalPagarfinal = 0.0f;

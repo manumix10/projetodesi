@@ -11,8 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.ModelFormPagDatas;
 import model.ModelParcelaContaPag;
-import util.BLData;
-import util.BLMascaras;
+import util.Data;
+import util.Mascaras;
 
 public class ControllerParcelaContaPag {
     private DAOParcelaContaPag daoParcelaConta = new DAOParcelaContaPag();
@@ -20,7 +20,7 @@ public class ControllerParcelaContaPag {
     public ArrayList<ModelParcelaContaPag> criarlistaDeParcelasMes(double pValorTotalReceber, ArrayList<ModelFormPagDatas> pListaDeDiasParcela, int pNumTotalParcelas, Date pDataParcela, double pEntrada, int pNaoPago) {
         ArrayList<ModelParcelaContaPag> listaDeParcelas = new ArrayList<ModelParcelaContaPag>();
         ModelParcelaContaPag modelParcela = new ModelParcelaContaPag();
-        BLData blDatas = new BLData();
+        Data blDatas = new Data();
         DecimalFormat formatar = new DecimalFormat("#0.00");
         double valorParcelar = (pValorTotalReceber - pEntrada) / (double)pNumTotalParcelas;
         int inicioCont = 0;
@@ -29,10 +29,10 @@ public class ControllerParcelaContaPag {
             inicioCont = 2;
             ++pNumTotalParcelas;
             modelParcela.setNumeroParcela(1);
-            modelParcela.setValorPagar(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
+            modelParcela.setValorPagar(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
             modelParcela.setStatus(pNaoPago);
             modelParcela.setJurosPorAtraso(0.0f);
-            modelParcela.setValorParcial(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
+            modelParcela.setValorParcial(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
             modelParcela.setDataVenciamento(pDataParcela);
             listaDeParcelas.add(modelParcela);
         } else {
@@ -41,10 +41,10 @@ public class ControllerParcelaContaPag {
         for (int i = inicioCont; i <= pNumTotalParcelas; ++i) {
             modelParcela = new ModelParcelaContaPag();
             modelParcela.setNumeroParcela(i);
-            modelParcela.setValorPagar(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
+            modelParcela.setValorPagar(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
             modelParcela.setStatus(pNaoPago);
             modelParcela.setJurosPorAtraso(0.0f);
-            modelParcela.setValorParcial(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
+            modelParcela.setValorParcial(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
             try {
                 modelParcela.setDataVenciamento(blDatas.converterDataParaDateUS(blDatas.adddMes(pDataParcela, mes)));
             }
@@ -60,7 +60,7 @@ public class ControllerParcelaContaPag {
     public ArrayList<ModelParcelaContaPag> criarlistaDeParcelasDia(double pValorTotalReceber, ArrayList<ModelFormPagDatas> pListaDeDiasParcela, int pNumTotalParcelas, Date pDataParcela, double pEntrada, int pNaoPago) {
         ArrayList<ModelParcelaContaPag> listaDeParcelas = new ArrayList<ModelParcelaContaPag>();
         ModelParcelaContaPag modelParcela = new ModelParcelaContaPag();
-        BLData blDatas = new BLData();
+        Data blDatas = new Data();
         DecimalFormat formatar = new DecimalFormat("#0.00");
         double valorParcelar = (pValorTotalReceber - pEntrada) / (double)pNumTotalParcelas;
         int inicioCont = 0;
@@ -70,10 +70,10 @@ public class ControllerParcelaContaPag {
             inicioCont = 2;
             ++pNumTotalParcelas;
             modelParcela.setNumeroParcela(1);
-            modelParcela.setValorPagar(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
+            modelParcela.setValorPagar(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
             modelParcela.setStatus(pNaoPago);
             modelParcela.setJurosPorAtraso(0.0f);
-            modelParcela.setValorParcial(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
+            modelParcela.setValorParcial(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(pEntrada))));
             modelParcela.setDataVenciamento(pDataParcela);
             listaDeParcelas.add(modelParcela);
         } else {
@@ -83,10 +83,10 @@ public class ControllerParcelaContaPag {
         for (int i = inicioCont; i <= pNumTotalParcelas; ++i) {
             modelParcela = new ModelParcelaContaPag();
             modelParcela.setNumeroParcela(i);
-            modelParcela.setValorPagar(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
+            modelParcela.setValorPagar(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
             modelParcela.setStatus(pNaoPago);
             modelParcela.setJurosPorAtraso(0.0f);
-            modelParcela.setValorParcial(Float.parseFloat(new BLMascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
+            modelParcela.setValorParcial(Float.parseFloat(new Mascaras().converterVirgulaParaPonto(formatar.format(valorParcelar))));
             try {
                 modelParcela.setDataVenciamento(blDatas.converterDataParaDateUS(blDatas.addDias(pListaDeDiasParcela.get(i - dias).getDiasFormaPagamento(), pDataParcela)));
             }

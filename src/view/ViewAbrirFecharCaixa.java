@@ -32,8 +32,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import model.ModelAberturaCaixaPDV;
 import model.ModelSessaoUsuario;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 import view.ViewPdv;
 
 public class ViewAbrirFecharCaixa
@@ -42,8 +42,8 @@ extends JDialog {
     ModelAberturaCaixaPDV modelAberturaCaixaPDV = new ModelAberturaCaixaPDV();
     ArrayList<ModelAberturaCaixaPDV> listaAberturaCaixaPDVs = new ArrayList();
     private ModelSessaoUsuario sessaoUsuario = new ModelSessaoUsuario();
-    BLDatas bLDatas = new BLDatas();
-    BLMascaras bLMascaras = new BLMascaras();
+    Datas bLDatas = new Datas();
+    Mascaras bLMascaras = new Mascaras();
     private JButton btConfirmar;
     private JLabel jLabel1;
     private JLabel jLabel2;

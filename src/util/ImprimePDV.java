@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import model.ModelEmpresaCidadeEstado;
 import model.ModelVendas;
 import model.ModelVendasProdutos;
-import util.BLMascaras;
+import util.Mascaras;
 
 public class ImprimePDV {
     public void geraCupomTXT(int pCodigo) throws IOException {
@@ -36,7 +36,7 @@ public class ImprimePDV {
         ArrayList listaModelVendasProdutoses = new ArrayList();
         ModelVendas modelVendas = new ModelVendas();
         ModelEmpresaCidadeEstado modelEmpresaCidadeEstado = new ModelEmpresaCidadeEstado();
-        BLMascaras bLMascaras = new BLMascaras();
+        Mascaras bLMascaras = new Mascaras();
         modelVendas = controllerVendas.getVendasController(pCodigo);
         listaModelVendasProdutoses = controllerVendasProdutos.getListaVendasProdutosController(pCodigo);
         modelEmpresaCidadeEstado = controllerEmpresaCidadeEstado.getEmpresaCidadeEstadoController(1);

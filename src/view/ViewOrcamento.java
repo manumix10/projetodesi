@@ -31,8 +31,8 @@ import model.ModelFormaPagamento;
 import model.ModelProdutos;
 import model.ModelVendas;
 import util.AguardeGerandoRelatorio;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 
 /**
  * @author  BLSoft
@@ -59,7 +59,7 @@ public class ViewOrcamento extends javax.swing.JFrame {
     ControllerFormaPagamento controllerTipoPagamento = new ControllerFormaPagamento();
     ArrayList<ModelFormaPagamento> listaModelTipoPagamentos = new ArrayList<>();
     ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
-    BLMascaras bLMascaras = new BLMascaras();
+    Mascaras bLMascaras = new Mascaras();
     float valorCartao, valorCheque, valorDinheiro, valorVale;
     String tipoCadastro;
     
@@ -734,7 +734,7 @@ public class ViewOrcamento extends javax.swing.JFrame {
             listaProdutoses = new ArrayList<>();
             int codigoProduto; 
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();
@@ -898,7 +898,7 @@ public class ViewOrcamento extends javax.swing.JFrame {
 
     private void tfDescontoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDescontoKeyReleased
         // TODO add your handling code here:
-        this.tfDesconto.setText(new BLMascaras().converterVirgulaParaPonto(this.tfDesconto.getText()));
+        this.tfDesconto.setText(new Mascaras().converterVirgulaParaPonto(this.tfDesconto.getText()));
     }//GEN-LAST:event_tfDescontoKeyReleased
 
     private void tfDescontoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfDescontoFocusGained
@@ -977,7 +977,7 @@ public class ViewOrcamento extends javax.swing.JFrame {
 
     private void tfValorUnitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfValorUnitarioKeyReleased
         // TODO add your handling code here:
-        this.tfValorUnitario.setText(new BLMascaras().converterVirgulaParaPonto(this.tfValorUnitario.getText()));
+        this.tfValorUnitario.setText(new Mascaras().converterVirgulaParaPonto(this.tfValorUnitario.getText()));
     }//GEN-LAST:event_tfValorUnitarioKeyReleased
     
     // calcula o valor total do produto com quantidade
@@ -1195,7 +1195,7 @@ public class ViewOrcamento extends javax.swing.JFrame {
             listaProdutoses = new ArrayList<>();
             int codigoProduto; 
             float quantidade;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();

@@ -22,9 +22,9 @@ import model.ModelClienteContaParcelaRec;
 import model.ModelContaReceber;
 import model.ModelFormaPagamento;
 import util.AguardeGerandoRelatorio;
-import util.BLData;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Data;
+import util.Datas;
+import util.Mascaras;
 import controller.ControllerClienteContaParcelaRec;
 
 /**
@@ -687,7 +687,7 @@ public class ViewContasReceber extends javax.swing.JFrame {
         try {
             int linha = tbContasReceber.getSelectedRow();
             int codigo = (int) tbContasReceber.getValueAt(linha, 0);
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
             
             modelContaReceber.setCodigo(codigo);
             modelContaReceber.setSituacao(1);
@@ -715,7 +715,7 @@ public class ViewContasReceber extends javax.swing.JFrame {
         try {
             int linha = tbContasRecebidas.getSelectedRow();
             int codigo = (int) tbContasRecebidas.getValueAt(linha, 0);
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
             
             modelContaReceber.setCodigo(codigo);
             modelContaReceber.setSituacao(0);
@@ -740,12 +740,12 @@ public class ViewContasReceber extends javax.swing.JFrame {
 
     private void jtfValorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyReleased
         // converte virgula em ponto
-        this.jtfValor.setText(new BLMascaras().converterVirgulaParaPonto(this.jtfValor.getText()));
+        this.jtfValor.setText(new Mascaras().converterVirgulaParaPonto(this.jtfValor.getText()));
     }//GEN-LAST:event_jtfValorKeyReleased
 
     private void jtfValorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfValorFocusLost
         //formatar campo
-        this.jtfValor.setText(new BLMascaras().addPonto(this.jtfValor.getText()));
+        this.jtfValor.setText(new Mascaras().addPonto(this.jtfValor.getText()));
     }//GEN-LAST:event_jtfValorFocusLost
 
     private void cbCodClientePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbCodClientePopupMenuWillBecomeInvisible
@@ -816,7 +816,7 @@ public class ViewContasReceber extends javax.swing.JFrame {
      * @return 
      */
     private boolean salvar() {
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         modelContaReceber.setCodigoPessoa(Integer.parseInt(this.cbCodCliente.getSelectedItem().toString()));
         modelContaReceber.setDescricao(this.jtfDescricao.getText());
         try {
@@ -850,7 +850,7 @@ public class ViewContasReceber extends javax.swing.JFrame {
      * @return 
      */
     private boolean alterar() {
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         modelContaReceber.setCodigoPessoa(controllerCliente.getClienteController(this.cbClientes.getSelectedItem().toString()).getCodigo());
         modelContaReceber.setDescricao(this.jtfDescricao.getText());
         modelContaReceber.setCodigo(Integer.parseInt(this.jtfCodigoConta.getText()));

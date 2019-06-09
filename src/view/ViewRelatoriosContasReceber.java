@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import model.ModelCliente;
 import model.ModelContaReceber;
 import model.ModelFormaPagamento;
-import util.BLDatas;
+import util.Datas;
 
 /**
  *
@@ -26,7 +26,7 @@ public class ViewRelatoriosContasReceber extends javax.swing.JFrame {
     
     ControllerContaReceber controllerContaReceber = new ControllerContaReceber();
     ModelContaReceber modelContaReceber = new ModelContaReceber();
-    BLDatas bl = new BLDatas();
+    Datas bl = new Datas();
     ControllerCliente controllerCliente = new ControllerCliente();
     ArrayList<ModelContaReceber> listaModelContaRecebers = new ArrayList<>();
     ControllerFormaPagamento controllerFormaPagamento = new ControllerFormaPagamento();
@@ -253,7 +253,7 @@ public class ViewRelatoriosContasReceber extends javax.swing.JFrame {
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGerarRelatorioActionPerformed
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         Date dataInicial = null, dataFinal = null;
         int codigoFornecedor = 0;
         codigoFornecedor = Integer.parseInt(cbCodCliente.getSelectedItem().toString());

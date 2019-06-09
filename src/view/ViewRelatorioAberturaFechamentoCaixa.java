@@ -39,7 +39,7 @@ import javax.swing.table.TableRowSorter;
 import model.ModelAberturaCaixaPDV;
 import model.ModelSessaoUsuario;
 import util.AguardeGerandoRelatorio;
-import util.BLDatas;
+import util.Datas;
 
 public class ViewRelatorioAberturaFechamentoCaixa
 extends JFrame {
@@ -47,7 +47,7 @@ extends JFrame {
     ModelAberturaCaixaPDV modelAberturaCaixaPDV = new ModelAberturaCaixaPDV();
     ArrayList<ModelAberturaCaixaPDV> listaAberturaCaixaPDVs = new ArrayList();
     private ModelSessaoUsuario sessaoUsuario = new ModelSessaoUsuario();
-    BLDatas bLDatas = new BLDatas();
+    Datas bLDatas = new Datas();
     private JLabel jLabel1;
     private JPanel jPanel1;
     private JScrollPane jScrollPane1;

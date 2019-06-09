@@ -3,7 +3,7 @@
  */
 package util;
 
-public class BLTiraAcentos {
+public class TiraAcentos {
     public String TiraAcentos(String passa) {
         passa = passa.replaceAll("[\u00c2\u00c0\u00c1\u00c4\u00c3]", "A");
         passa = passa.replaceAll("[\u00e2\u00e3\u00e0\u00e1\u00e4]", "a");

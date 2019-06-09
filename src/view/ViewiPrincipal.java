@@ -44,7 +44,7 @@ import model.ModelPermissaousuario;
 import model.ModelSessaoUsuario;
 import util.Aguarde;
 import util.AguardeGerandoRelatorio;
-import util.BLDatas;
+import util.Datas;
 
 public class ViewiPrincipal
 extends JFrame {
@@ -1211,7 +1211,7 @@ extends JFrame {
     private void configurar() {
         this.pNomeUsuario = this.retornarUsuarioLogado();
         this.jlUsuario.setText(this.pNomeUsuario);
-        BLDatas bLDatas = new BLDatas();
+        Datas bLDatas = new Datas();
         this.jlData.setText(bLDatas.retornarDataHora());
     }
 

@@ -5,7 +5,7 @@ package util;
 
 import java.text.DecimalFormat;
 
-public class BLMascaras {
+public class Mascaras {
     public String converterVirgulaParaPonto(String pString) {
         String retorno = new String();
         int tamanhoString = pString.length();

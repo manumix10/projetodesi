@@ -46,8 +46,8 @@ import model.ModelProdutos;
 import model.ModelUnidadeMedia;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
-import util.BLMascaras;
-import util.BLTiraAcentos;
+import util.Mascaras;
+import util.TiraAcentos;
 
 public class ViewProduto
 extends JFrame {
@@ -367,23 +367,23 @@ extends JFrame {
     }
 
     private void tfValorVendaFocusLost(FocusEvent evt) {
-        this.tfValorVenda.setText(new BLMascaras().converterVirgulaParaPonto(this.tfValorVenda.getText()));
+        this.tfValorVenda.setText(new Mascaras().converterVirgulaParaPonto(this.tfValorVenda.getText()));
     }
 
     private void jtfNomeFocusLost(FocusEvent evt) {
         this.jtfNome.setText(this.jtfNome.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.jtfNome.setText(blTiraAcentos.TiraAcentos(this.jtfNome.getText()));
     }
 
     private void tfPesquisaProdutoFocusLost(FocusEvent evt) {
         this.tfPesquisaProduto.setText(this.tfPesquisaProduto.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfPesquisaProduto.setText(blTiraAcentos.TiraAcentos(this.tfPesquisaProduto.getText()));
     }
 
     private void tfValorCustoFocusLost(FocusEvent evt) {
-        this.tfValorCusto.setText(new BLMascaras().converterVirgulaParaPonto(this.tfValorCusto.getText()));
+        this.tfValorCusto.setText(new Mascaras().converterVirgulaParaPonto(this.tfValorCusto.getText()));
     }
 
     private void listarUnidadeMedidas() {

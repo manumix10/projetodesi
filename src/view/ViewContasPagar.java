@@ -23,9 +23,9 @@ import model.ModelFormaPagamento;
 import model.ModelFornecedor;
 import model.ModelFornecedorContaParcela;
 import util.AguardeGerandoRelatorio;
-import util.BLData;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Data;
+import util.Datas;
+import util.Mascaras;
 import controller.ControllerFornecedorContaParcela;
 import java.text.DecimalFormat;
 
@@ -679,7 +679,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
         try {
             int linha = tbContasPagar.getSelectedRow();
             int codigo = (int) tbContasPagar.getValueAt(linha, 0);
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
             
             modelContaPagar.setCodigo(codigo);
             modelContaPagar.setSituacao(1);
@@ -707,7 +707,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
         try {
             int linha = tbContasPagas.getSelectedRow();
             int codigo = (int) tbContasPagas.getValueAt(linha, 0);
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
             
             modelContaPagar.setCodigo(codigo);
             modelContaPagar.setSituacao(0);
@@ -732,12 +732,12 @@ public class ViewContasPagar extends javax.swing.JFrame {
 
     private void jtfValorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfValorFocusLost
         //formatar campo
-        this.jtfValor.setText(new BLMascaras().addPonto(this.jtfValor.getText()));
+        this.jtfValor.setText(new Mascaras().addPonto(this.jtfValor.getText()));
     }//GEN-LAST:event_jtfValorFocusLost
 
     private void jtfValorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfValorKeyReleased
         // converte virgula em ponto
-        this.jtfValor.setText(new BLMascaras().converterVirgulaParaPonto(this.jtfValor.getText()));
+        this.jtfValor.setText(new Mascaras().converterVirgulaParaPonto(this.jtfValor.getText()));
     }//GEN-LAST:event_jtfValorKeyReleased
 
     private void cbCodFornecedorPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cbCodFornecedorPopupMenuWillBecomeInvisible
@@ -808,7 +808,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
      * @return 
      */
     private boolean salvar() {
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         modelContaPagar.setTipoConta("PAGAR");
         modelContaPagar.setCodigoPessoa(controllerFornecedor.getFornecedorController(this.cbFornecedor.getSelectedItem().toString()).getCodigo());
         modelContaPagar.setDescricao(this.jtfDescricao.getText());
@@ -843,7 +843,7 @@ public class ViewContasPagar extends javax.swing.JFrame {
      * @return 
      */
     private boolean alterar() {
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         modelContaPagar.setTipoConta("PAGAR");
         modelContaPagar.setCodigoPessoa(controllerFornecedor.getFornecedorController(this.cbFornecedor.getSelectedItem().toString()).getCodigo());
         modelContaPagar.setDescricao(this.jtfDescricao.getText());

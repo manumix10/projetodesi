@@ -52,7 +52,7 @@ import javax.swing.table.TableModel;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.NumberFormatter;
 import model.ModelFormaPagamento;
-import util.BLTiraAcentos;
+import util.TiraAcentos;
 
 public class ViewFormaPagamento
 extends JFrame {
@@ -278,7 +278,7 @@ extends JFrame {
 
     private void tfDescricaoFocusLost(FocusEvent evt) {
         this.tfDescricao.setText(this.tfDescricao.getText().toUpperCase());
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfDescricao.setText(blTiraAcentos.TiraAcentos(this.tfDescricao.getText()));
     }
 

@@ -29,8 +29,8 @@ import model.ModelSessaoUsuario;
 import model.ModelVendas;
 import model.ModelVendasProdutos;
 import util.AtualizadorHorario;
-import util.BLDatas;
-import util.BLMascaras;
+import util.Datas;
+import util.Mascaras;
 
 /**
  *
@@ -492,14 +492,14 @@ public class ViewPdv2 extends javax.swing.JFrame {
         // TODO add your handling code here:  
         keyPressed(evt);
         statusCaixa();
-        this.jtfValorPagar.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal())); 
+        this.jtfValorPagar.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal())); 
         
     }//GEN-LAST:event_jtfCodigoProdutoKeyPressed
 
     private void jtfCodigoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCodigoProdutoActionPerformed
         // TODO add your handling code here:
            statusCaixa();
-        this.jtfValorPagar.setText("" + new BLMascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal())); 
+        this.jtfValorPagar.setText("" + new Mascaras().arredondamentoComPontoDuasCasas(this.somaEAtualizaValorTotal())); 
       //  keyPressed(evt);
      
     }//GEN-LAST:event_jtfCodigoProdutoActionPerformed
@@ -615,7 +615,7 @@ public class ViewPdv2 extends javax.swing.JFrame {
             ControllerProdutos controllerProdutos = new ControllerProdutos();
             ModelProdutos modelProdutos = new ModelProdutos();
             DefaultTableModel modelo = (DefaultTableModel) tbProdutos.getModel();        
-            BLMascaras bLMascaras = new BLMascaras();
+            Mascaras bLMascaras = new Mascaras();
             try {
                 modelProdutos = controllerProdutos.getProdutosCodigoBarrasController(this.jtfCodigoProduto.getText());
                 float valorArredondado = (float)(quantidadeProduto * modelProdutos.getValor());
@@ -644,7 +644,7 @@ public class ViewPdv2 extends javax.swing.JFrame {
         ModelProdutos modelProdutos = new ModelProdutos();
         DefaultTableModel modelo = (DefaultTableModel) tbProdutos.getModel();
         modelProdutos = controllerProdutos.getProdutosController(pCodigoProduto);
-        BLMascaras bLMascaras = new BLMascaras();
+        Mascaras bLMascaras = new Mascaras();
         float valorArredondado = (float)(modelProdutos.getValor() * (double)this.quantidadeProduto);
         float valorArredondadoFinal = bLMascaras.arredondamentoComPontoDuasCasas(valorArredondado);
 
@@ -749,7 +749,7 @@ public class ViewPdv2 extends javax.swing.JFrame {
             listaProdutoses = new ArrayList<>();
             int codigoProduto; 
             float quantidade = 0;
-            BLDatas bl = new BLDatas();
+            Datas bl = new Datas();
 
             for (int i = 0; i < tbProdutos.getRowCount(); i++) {
                 modelVendas = new ModelVendas();
@@ -815,7 +815,7 @@ public class ViewPdv2 extends javax.swing.JFrame {
         ControllerVendas controllerVendas = new ControllerVendas();
         ArrayList<ModelVendasProdutos> listaModelVendasProdutoses = new ArrayList<>();
         ModelVendas modelVendas = new ModelVendas();
-        BLMascaras bLMascaras = new BLMascaras();
+        Mascaras bLMascaras = new Mascaras();
         modelVendas = controllerVendas.getVendasController(79);
         listaModelVendasProdutoses = controllerVendasProdutos.getListaVendasProdutosController(79);
         System.out.println("Entrei aqui 2");

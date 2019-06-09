@@ -20,7 +20,7 @@ import model.ModelCliente;
 import model.ModelClienteCidadeEstado;
 import model.ModelEstado;
 import util.AguardeGerandoRelatorio;
-import util.BLTiraAcentos;
+import util.TiraAcentos;
 
 /**
  * @author  BLSoft
@@ -669,7 +669,7 @@ public class ViewClientes extends javax.swing.JFrame {
         // converte em maiusculo o que o usuario digitar
         this.tfNome.setText(tfNome.getText().toUpperCase());
         //tira acentos
-        BLTiraAcentos blTiraAcentos = new BLTiraAcentos();
+        TiraAcentos blTiraAcentos = new TiraAcentos();
         this.tfNome.setText(blTiraAcentos.TiraAcentos(tfNome.getText()));
     }//GEN-LAST:event_tfNomeFocusLost
 

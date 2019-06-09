@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ModelFornecedor;
 import model.ModelNotaFiscal;
-import util.BLDatas;
+import util.Datas;
 import util.Mensagem;
 
 /**
@@ -306,7 +306,7 @@ public class ViewNotaFiscal extends javax.swing.JFrame {
 
     private boolean salvar() {
           
-        BLDatas bl = new BLDatas();              
+        Datas bl = new Datas();              
         
         try {
             this.modelnotafiscal.setData(bl.converterDataParaDateUS(this.jdData.getDate()));

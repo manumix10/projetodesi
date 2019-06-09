@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.ModelCliente;
-import util.BLDatas;
+import util.Datas;
 
 /**
  *
@@ -219,7 +219,7 @@ public class ViewRelatorioVendas extends javax.swing.JFrame {
 
     private void jbGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGerarRelatorioActionPerformed
         ControllerVendas controllerVendas = new ControllerVendas();
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         Date dataInicial = null, dataFinal = null;
         int codigoCliente = 0;
         codigoCliente = Integer.parseInt(cbCodCliente.getSelectedItem().toString());

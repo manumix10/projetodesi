@@ -13,7 +13,7 @@ import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import util.BLMascaras;
+import util.Mascaras;
 
 /**
  *
@@ -160,7 +160,7 @@ public class ViewQuantidadePDV extends javax.swing.JDialog {
 
     private void jtfQuantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfQuantidadeFocusLost
         // TODO add your handling code here:
-        this.jtfQuantidade.setText(new BLMascaras().arredondamentoComPontoTresCasas(Float.parseFloat(jtfQuantidade.getText()))+"");
+        this.jtfQuantidade.setText(new Mascaras().arredondamentoComPontoTresCasas(Float.parseFloat(jtfQuantidade.getText()))+"");
     }//GEN-LAST:event_jtfQuantidadeFocusLost
     
     private void doClose(float retStatus) {

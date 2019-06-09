@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.ModelParcelaContaPag;
-import util.BLData;
+import util.Data;
 
 public class DAOParcelaContaPag
 extends ConexaoFirebird {
@@ -246,7 +246,7 @@ extends ConexaoFirebird {
      * WARNING - Removed try catching itself - possible behaviour change.
      */
     public boolean pagarParcelaDAO(ModelParcelaContaPag pModelParcelaConta) {
-        BLData bl = new BLData();
+        Data bl = new Data();
         Date dataPagamento = new Date();
         try {
             dataPagamento = bl.converterDataParaDateUS(new Date(System.currentTimeMillis()));
@@ -274,7 +274,7 @@ extends ConexaoFirebird {
      * WARNING - Removed try catching itself - possible behaviour change.
      */
     public boolean revogarPagamentoParcelaDAO(ModelParcelaContaPag pModelParcelaContaPag) {
-        BLData bl = new BLData();
+        Data bl = new Data();
         Date dataPagamento = new Date();
         try {
             dataPagamento = bl.converterDataParaDateUS(new Date(System.currentTimeMillis()));

@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import model.ModelContaPagar;
 import model.ModelFormaPagamento;
 import model.ModelFornecedor;
-import util.BLDatas;
+import util.Datas;
 
 /**
  *
@@ -26,7 +26,7 @@ public class ViewRelatoriosFornecedor extends javax.swing.JFrame {
     
     ControllerContaPagar controllerContaPagar = new ControllerContaPagar();
     ModelContaPagar modelContaPagar = new ModelContaPagar();
-    BLDatas bl = new BLDatas();
+    Datas bl = new Datas();
     ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
     ArrayList<ModelContaPagar> listamModelContaPagar = new ArrayList<>();
     ControllerFormaPagamento controllerFormaPagamento = new ControllerFormaPagamento();
@@ -217,7 +217,7 @@ public class ViewRelatoriosFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGerarRelatorioActionPerformed
-        BLDatas bl = new BLDatas();
+        Datas bl = new Datas();
         Date dataInicial = null, dataFinal = null;
         int codigoFornecedor = 0;
         codigoFornecedor = Integer.parseInt(cbCodFornecedor.getSelectedItem().toString());
