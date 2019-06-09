@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="teste5Cliente" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5752131e-c7c4-492d-bfe6-502dc8a70310">
+	<property name="ireport.zoom" value="1.6500000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="permissao" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     ABERTURA_CAIXA_PDV."CODIGO" AS ABERTURA_CAIXA_PDV_CODIGO,
+     ABERTURA_CAIXA_PDV."CODIGO_USUARIO" AS ABERTURA_CAIXA_PDV_CODIGO_USUAR,
+     ABERTURA_CAIXA_PDV."VALOR_ABERTURA" AS ABERTURA_CAIXA_PDV_VALOR_ABERTU,
+     ABERTURA_CAIXA_PDV."VALOR_FECHAMENTO" AS ABERTURA_CAIXA_PDV_VALOR_FECHAM,
+     ABERTURA_CAIXA_PDV."DATA" AS ABERTURA_CAIXA_PDV_DATA,
+     ABERTURA_CAIXA_PDV."STATUS" AS ABERTURA_CAIXA_PDV_STATUS,
+     TBL_USUARIOS."PK_CODIGO" AS TBL_USUARIOS_PK_CODIGO,
+     TBL_USUARIOS."NOME" AS TBL_USUARIOS_NOME,
+     TBL_USUARIOS."LOGIN" AS TBL_USUARIOS_LOGIN
+FROM
+     "TBL_USUARIOS" TBL_USUARIOS INNER JOIN "ABERTURA_CAIXA_PDV" ABERTURA_CAIXA_PDV ON TBL_USUARIOS."PK_CODIGO" = ABERTURA_CAIXA_PDV."CODIGO_USUARIO"]]>
+	</queryString>
+	<field name="ABERTURA_CAIXA_PDV_CODIGO" class="java.lang.Integer"/>
+	<field name="ABERTURA_CAIXA_PDV_CODIGO_USUAR" class="java.lang.Integer"/>
+	<field name="ABERTURA_CAIXA_PDV_VALOR_ABERTU" class="java.lang.Double"/>
+	<field name="ABERTURA_CAIXA_PDV_VALOR_FECHAM" class="java.lang.Double"/>
+	<field name="ABERTURA_CAIXA_PDV_DATA" class="java.sql.Date"/>
+	<field name="ABERTURA_CAIXA_PDV_STATUS" class="java.lang.Integer"/>
+	<field name="TBL_USUARIOS_PK_CODIGO" class="java.lang.Long"/>
+	<field name="TBL_USUARIOS_NOME" class="java.lang.String"/>
+	<field name="TBL_USUARIOS_LOGIN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="356" y="0" width="199" height="43" forecolor="#999999" uuid="7ace4e32-444f-4a24-9209-ae7cdb5e625d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="30" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Relatório]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="326" y="43" width="226" height="22" forecolor="#FF0033" uuid="d3f3f63b-2091-4503-ac60-0568102fe84b"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Abertura/Fechamento caixa]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="1" width="325" height="80" uuid="7d39a1f8-96ab-4c7e-b470-b088a3d08d63"/>
+				<imageExpression><![CDATA["C:\\Sistema Assistencia OS\\src\\imagens\\processimg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="326" y="66" width="75" height="15" uuid="2d5c12fa-5b6f-4243-925a-cc25686d290e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Número:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="402" y="66" width="150" height="15" uuid="0e1af81a-5974-4a6b-aaab-e9eed3e9d393"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABERTURA_CAIXA_PDV_CODIGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="25" width="75" height="15" uuid="548fe10b-0f77-456d-b39a-efb94a3121b7"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Fechamento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="10" width="75" height="15" uuid="616f1713-d93e-44a1-b322-112cb4a87590"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Abertura:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="225" y="25" width="150" height="15" uuid="75aaee28-029e-4788-8e31-bd5b6658cd6e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABERTURA_CAIXA_PDV_VALOR_FECHAM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="225" y="10" width="150" height="15" uuid="b8931a0d-b567-4f9c-92b6-18ea19b04fd9"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABERTURA_CAIXA_PDV_VALOR_ABERTU}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="146" y="40" width="75" height="15" uuid="033a8df8-b7a0-4f6d-8643-5b00cca40bd3"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Diferença:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="225" y="40" width="150" height="15" uuid="1db71324-8fda-4da6-84a3-307a0ab9afcd"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABERTURA_CAIXA_PDV_VALOR_FECHAM} - $F{ABERTURA_CAIXA_PDV_VALOR_ABERTU}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="63" width="555" height="1" uuid="1a89e1dd-1925-4235-9cf7-06cdae90d9fb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="64" width="75" height="15" uuid="f4274db0-569d-4a71-807a-e3cc87a24fac"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Usuário/caixa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="94" width="75" height="15" uuid="39102a27-e09f-4680-871a-2825b6585a4b"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="75" height="15" uuid="f706c4de-6f81-40b9-a1a5-d05699c41ea9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Login:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="76" y="64" width="424" height="15" uuid="d8d0d190-18bd-4018-8503-42794415044c"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TBL_USUARIOS_NOME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="79" width="250" height="15" uuid="2c930d01-6c28-4248-bac5-7e9b7c608e27"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TBL_USUARIOS_LOGIN}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="76" y="94" width="250" height="15" uuid="ef42232a-02d3-46f3-9b51-07c46c6457d4"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABERTURA_CAIXA_PDV_DATA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#99FFCC" backcolor="#F2EBDF" uuid="ba31c8b2-2c27-47d8-9359-c70cfda6a57f"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="55fa3bd0-f970-4153-b5b6-72f36609b113"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="4f87f053-8f5d-4579-b07e-e8d4e67c93d3"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="d210404a-4ccf-4535-841f-40dda6e1d39f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

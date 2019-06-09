@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="teste5Cliente" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="219564ee-5c2a-437b-b340-4f2ff865c8a2">
+	<property name="ireport.zoom" value="1.6500000000000008"/>
+	<property name="ireport.x" value="41"/>
+	<property name="ireport.y" value="96"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="permissao" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     CONTAS_RECEBER."PK_CODIGO" AS CONTAS_RECEBER_PK_CODIGO,
+     CONTAS_RECEBER."FK_CODIGO_PESSOA" AS CONTAS_RECEBER_FK_CODIGO_PESSOA,
+     CONTAS_RECEBER."DESCRICAO" AS CONTAS_RECEBER_DESCRICAO,
+     CONTAS_RECEBER."DATA" AS CONTAS_RECEBER_DATA,
+     CONTAS_RECEBER."VENCIMENTO" AS CONTAS_RECEBER_VENCIMENTO,
+     CONTAS_RECEBER."FK_TIPO_PAGAMENTO" AS CONTAS_RECEBER_FK_TIPO_PAGAMENT,
+     CONTAS_RECEBER."OBSERVACAO" AS CONTAS_RECEBER_OBSERVACAO,
+     CONTAS_RECEBER."SITUACAO" AS CONTAS_RECEBER_SITUACAO,
+     CONTAS_RECEBER."VALOR" AS CONTAS_RECEBER_VALOR,
+     CONTAS_RECEBER."PAGAMENTO" AS CONTAS_RECEBER_PAGAMENTO,
+     CLIENTES."CODIGO" AS CLIENTES_CODIGO,
+     CLIENTES."NOME" AS CLIENTES_NOME,
+     CLIENTES."ENDERECO" AS CLIENTES_ENDERECO,
+     CLIENTES."BAIRRO" AS CLIENTES_BAIRRO,
+     CLIENTES."COD_CIDADE" AS CLIENTES_COD_CIDADE,
+     CLIENTES."COD_ESTADO" AS CLIENTES_COD_ESTADO,
+     CLIENTES."CEP" AS CLIENTES_CEP,
+     CLIENTES."TELEFONE" AS CLIENTES_TELEFONE,
+     CLIENTES."CPF_CNPJ" AS CLIENTES_CPF_CNPJ,
+     CLIENTES."OBSERVACAO" AS CLIENTES_OBSERVACAO
+FROM
+     "CLIENTES" CLIENTES INNER JOIN "CONTAS_RECEBER" CONTAS_RECEBER ON CLIENTES."CODIGO" = CONTAS_RECEBER."FK_CODIGO_PESSOA"]]>
+	</queryString>
+	<field name="CONTAS_RECEBER_PK_CODIGO" class="java.lang.Integer"/>
+	<field name="CONTAS_RECEBER_FK_CODIGO_PESSOA" class="java.lang.Integer"/>
+	<field name="CONTAS_RECEBER_DESCRICAO" class="java.lang.String"/>
+	<field name="CONTAS_RECEBER_DATA" class="java.sql.Date"/>
+	<field name="CONTAS_RECEBER_VENCIMENTO" class="java.sql.Date"/>
+	<field name="CONTAS_RECEBER_FK_TIPO_PAGAMENT" class="java.lang.Integer"/>
+	<field name="CONTAS_RECEBER_OBSERVACAO" class="java.lang.String"/>
+	<field name="CONTAS_RECEBER_SITUACAO" class="java.lang.Integer"/>
+	<field name="CONTAS_RECEBER_VALOR" class="java.lang.Double"/>
+	<field name="CONTAS_RECEBER_PAGAMENTO" class="java.sql.Date"/>
+	<field name="CLIENTES_CODIGO" class="java.lang.Integer"/>
+	<field name="CLIENTES_NOME" class="java.lang.String"/>
+	<field name="CLIENTES_ENDERECO" class="java.lang.String"/>
+	<field name="CLIENTES_BAIRRO" class="java.lang.String"/>
+	<field name="CLIENTES_COD_CIDADE" class="java.lang.Integer"/>
+	<field name="CLIENTES_COD_ESTADO" class="java.lang.Integer"/>
+	<field name="CLIENTES_CEP" class="java.lang.String"/>
+	<field name="CLIENTES_TELEFONE" class="java.lang.String"/>
+	<field name="CLIENTES_CPF_CNPJ" class="java.lang.String"/>
+	<field name="CLIENTES_OBSERVACAO" class="java.lang.String"/>
+	<variable name="TOTALIZADOR" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{CONTAS_RECEBER_VALOR}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="335" y="0" width="217" height="62" forecolor="#999999" uuid="a78e22b3-50d6-43e6-a34c-016b3f1e35cb"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="24" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Contas Receber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="356" y="62" width="196" height="22" forecolor="#FF0033" uuid="37f4d19a-1a20-4e4b-8195-35d04f90a4e4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="1" width="325" height="80" uuid="7656e812-ff73-4d21-a8eb-8872bb1d5fca"/>
+				<imageExpression><![CDATA["C:\\Sistema Assistencia OS\\src\\imagens\\processimg.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="64563d56-0999-4381-9cc9-00ac92c66763"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="59" height="15" uuid="6afc5c2c-f4f6-4488-a7ab-a565aabc5f78"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="0" width="58" height="15" uuid="b7acd7fb-0edb-4829-a711-7edc9a5b8399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="87" height="15" uuid="61de59e4-4cd2-4d94-b31b-a2720ee22986"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="0" width="80" height="15" uuid="055993e6-13ab-4ed0-90cc-15f74553efe4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recebimento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="0" width="49" height="15" uuid="3629b3c0-230f-4c82-ba6f-d0456d6433e0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="1" y="0" width="554" height="14" uuid="30bb3d47-de38-4e1e-9ef8-1495bd605fd3"/>
+				<textField>
+					<reportElement x="60" y="0" width="137" height="14" uuid="91311543-5500-4291-bbc6-06ea1df858b2"/>
+					<textFieldExpression><![CDATA[$F{CONTAS_RECEBER_DESCRICAO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="202" y="0" width="159" height="14" uuid="7419c481-9142-462c-856c-81ffd81a7bcb"/>
+					<textFieldExpression><![CDATA[$F{CLIENTES_NOME}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="361" y="0" width="80" height="14" uuid="2c0df597-2872-4992-bf0f-0960cf7c2550"/>
+					<textFieldExpression><![CDATA[$F{CONTAS_RECEBER_PAGAMENTO}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤ #,##0.00">
+					<reportElement x="442" y="0" width="108" height="14" uuid="e29192e9-8621-46b6-b94b-dfa19e649bc1"/>
+					<textFieldExpression><![CDATA[$F{CONTAS_RECEBER_VALOR}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="0" y="0" width="59" height="14" uuid="e1dba49f-56aa-431b-848e-d7b33465ee9d"/>
+				<textFieldExpression><![CDATA[$F{CLIENTES_CODIGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="b5fc2404-bc71-44ae-a139-e0b6ca9e6474"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="-1" width="554" height="20" forecolor="#99FFCC" backcolor="#F2EBDF" uuid="b32fcc85-8ef2-4104-8c6c-6bb10e1e8a71"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#736343" uuid="01386836-a563-4a49-8fe0-bc2ee0196d55"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#736343" uuid="c5d0b5d8-860d-4a83-9c8e-f85df49ca9d5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="19" forecolor="#736343" uuid="d8a184d6-7bc9-4733-8d25-57ec78342d8f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="27" width="554" height="2" uuid="4e3e8f53-407f-4579-8548-a87764273412"/>
+			</line>
+			<staticText>
+				<reportElement x="383" y="12" width="70" height="15" uuid="57c0afb0-a297-4d0b-bbe4-6ac9351a163a"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Total:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="455" y="12" width="100" height="15" uuid="8df31249-514a-479a-8ca6-ee16bfe988f1"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TOTALIZADOR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
