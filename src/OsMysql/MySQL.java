@@ -1,11 +1,11 @@
 /*
  * Decompiled with CFR 0_122.
  */
-package blvendasmysql;
+package OsMysql;
 
 import view.ViewiPrincipal;
 
-public class BLVendasMySQL {
+public class MySQL {
     public static void main(String[] args) {
         new ViewiPrincipal().setVisible(true);
     }
